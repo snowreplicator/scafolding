@@ -5,11 +5,13 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ru.snowprelicator.main", "ru.snowprelicator.main\ru.snowprelicator.main.csproj", "{90892CDE-09A4-4657-8CA2-0125CDD3CA4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ru.snowprelicator.scafolding", "ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj", "{BAB70DEE-F6FC-49AA-9672-32C8FBC7B5FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ru.snowprelicator.scafolding", "ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj", "{BAB70DEE-F6FC-49AA-9672-32C8FBC7B5FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ru.snowprelicator.code_generation", "ru.snowprelicator.code_generation\ru.snowprelicator.code_generation.csproj", "{451421EA-515F-4D4F-A165-B62F17E791F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ru.snowprelicator.code_generation", "ru.snowprelicator.code_generation\ru.snowprelicator.code_generation.csproj", "{451421EA-515F-4D4F-A165-B62F17E791F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ru.snowprelicator.loading", "ru.snowprelicator.loading\ru.snowprelicator.loading.csproj", "{579827AB-40FB-4D47-BA13-3C85A6EB9A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ru.snowprelicator.loading", "ru.snowprelicator.loading\ru.snowprelicator.loading.csproj", "{579827AB-40FB-4D47-BA13-3C85A6EB9A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopulateDataBase", "PopulateDataBase\PopulateDataBase.csproj", "{7D7176FD-B924-4C68-9163-C1F0D77A66EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{579827AB-40FB-4D47-BA13-3C85A6EB9A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{579827AB-40FB-4D47-BA13-3C85A6EB9A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{579827AB-40FB-4D47-BA13-3C85A6EB9A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
