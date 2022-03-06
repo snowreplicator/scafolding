@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Scaffolding;
+﻿//using Microsoft.EntityFrameworkCore.Scaffolding;
 using ru.snowprelicator.populate_database;
 using ru.snowprelicator.scafolding;
 
@@ -11,7 +11,8 @@ namespace ru.snowprelicator.main
         static void Main(string[] args)
         {
             PopulateDataBase.PopulateDatabase(DB_CONNECTION_STRING);
-            IReverseEngineerScaffolder iReverseEngineerScaffolder = Scafolding.CreateScaffolder();
+            //IReverseEngineerScaffolder iReverseEngineerScaffolder = Scafolding.CreateScaffolder();
+            Scafolding.CreateScaffolder();
         }
     }
 }

@@ -4,10 +4,16 @@ namespace ru.snowprelicator.scafolding
 {
     public class Scafolding
     {
+        /*
         public static IReverseEngineerScaffolder CreateScaffolder()
         {
             ScaffolderService scaffolderService = new ScaffolderService();
             return scaffolderService.CreateScaffolder();
+        }*/
+
+        public static void CreateScaffolder()
+        {
+            ScaffolderService scaffolderService = new ScaffolderService();
         }
     }
 }
