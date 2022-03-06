@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PopulateDataBase\PopulateDataBase.csproj" />
+    <ProjectReference Include="..\ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj" />
   </ItemGroup>
 
 </Project>
