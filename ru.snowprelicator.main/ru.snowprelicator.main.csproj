@@ -8,6 +8,7 @@
     <ItemGroup>
         <ProjectReference Include="..\PopulateDataBase\PopulateDataBase.csproj" />
         <ProjectReference Include="..\ru.snowprelicator.code_generation\ru.snowprelicator.code_generation.csproj" />
+        <ProjectReference Include="..\ru.snowprelicator.data_manipulation\ru.snowprelicator.data_manipulation.csproj" />
         <ProjectReference Include="..\ru.snowprelicator.loading\ru.snowprelicator.loading.csproj" />
         <ProjectReference Include="..\ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj" />
     </ItemGroup>

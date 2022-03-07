@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Scaffolding;
 using ru.snowprelicator.code_generation;
+using ru.snowprelicator.data_manipulation;
 using ru.snowprelicator.loading;
 using ru.snowprelicator.populate_database;
 using ru.snowprelicator.scafolding;
@@ -41,9 +41,9 @@ namespace ru.snowprelicator.main
             DbContext applicationContext = Loading.LoadCompiledDll(memoryStream, ENABLE_LAZY_LOADING);
             memoryStream.Close();
 
-            // действия с данными
-            Utils.PrintAllApplicationContextTables(applicationContext.Model.GetEntityTypes());
-        }
 
+            // действия с данными
+            DataManipulation.ManipulateWithData(applicationContext);
+        }
     }
 }

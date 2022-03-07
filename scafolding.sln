@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ru.snowprelicator.code_gene
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ru.snowprelicator.loading", "ru.snowprelicator.loading\ru.snowprelicator.loading.csproj", "{579827AB-40FB-4D47-BA13-3C85A6EB9A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopulateDataBase", "PopulateDataBase\PopulateDataBase.csproj", "{7D7176FD-B924-4C68-9163-C1F0D77A66EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PopulateDataBase", "PopulateDataBase\PopulateDataBase.csproj", "{7D7176FD-B924-4C68-9163-C1F0D77A66EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ru.snowprelicator.data_manipulation", "ru.snowprelicator.data_manipulation\ru.snowprelicator.data_manipulation.csproj", "{5D7C46F0-C445-458A-BA89-973FC9E692BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D7176FD-B924-4C68-9163-C1F0D77A66EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7C46F0-C445-458A-BA89-973FC9E692BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7C46F0-C445-458A-BA89-973FC9E692BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7C46F0-C445-458A-BA89-973FC9E692BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7C46F0-C445-458A-BA89-973FC9E692BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
