@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -7,6 +7,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\PopulateDataBase\PopulateDataBase.csproj" />
+        <ProjectReference Include="..\ru.snowprelicator.code_generation\ru.snowprelicator.code_generation.csproj" />
         <ProjectReference Include="..\ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj" />
     </ItemGroup>
 

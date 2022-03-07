@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Scaffolding;
+using ru.snowprelicator.code_generation;
 using ru.snowprelicator.populate_database;
 using ru.snowprelicator.scafolding;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ru.snowprelicator.main
 {
@@ -17,12 +19,17 @@ namespace ru.snowprelicator.main
             "public"
         };
 
+        // LazyLoading
+        private static bool ENABLE_LAZY_LOADING = false;
+
         static void Main(string[] args)
         {
             Console.WriteLine("run exe in ru.snowprelicator.main namespace");
             PopulateDataBase.PopulateDatabase(DB_CONNECTION_STRING);
 
             ScaffoldedModel scaffoldedModel = Scafolding.CreateScaffolder(DB_CONNECTION_STRING, DB_SCHEMAS);
+
+            using MemoryStream memoryStream = CodeGeneration.GenerateCode(scaffoldedModel, ENABLE_LAZY_LOADING);
         }
     }
 }
