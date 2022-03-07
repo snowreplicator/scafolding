@@ -4,14 +4,19 @@ namespace ru.snowprelicator.scafolding.ModelGeneration
 {
     public class GeneratorOptions
     {
-        public string RootNamespace { get; set; } = "InteractiveStore";
+        // пока не найдено где используется
+        public string RootNamespace { get; set; } = "ru.snowreplicator.scafolder.rootnamespace";
 
-        public string ContextName { get; set; } = "InteractiveStoreContext";
+        // уходит в генерацию кода по контексту (класс расширяющий DbContext): public partial class ApplicationContext : DbContext
+        public string ContextName { get; set; } = "ApplicationContext";
 
-        public string ContextNamespace { get; set; } = "InteractiveStore.Context";
+        // уходит в генерацию кода (namespace) для dbConext: namespace ru.snowreplicator.scafolder.contextnamespace
+        public string ContextNamespace { get; set; } = "ru.snowreplicator.scafolder.contextnamespace";
 
-        public string ModelNamespace { get; set; } = "InteractiveStore.Models";
+        // уходит в генерацию кода (namespace) по моделям: namespace ru.snowreplicator.scafolder.modelnamespace
+        public string ModelNamespace { get; set; } = "ru.snowreplicator.scafolder.modelnamespace";
 
+        // влияет на генерацию аннотаций в моделях
         public bool GenerateWithAnnotations { get; set; } = true;
 
         public string ConnectionString { get; set; }
@@ -38,6 +43,7 @@ namespace ru.snowprelicator.scafolding.ModelGeneration
             return options;
         }
 
+        // видимо эта функция дает полное имя созданного ApplicationContext
         public string GetContextFullName()
         {
             return $"{ContextNamespace}.{ContextName}";

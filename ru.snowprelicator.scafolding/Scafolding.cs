@@ -7,8 +7,9 @@ namespace ru.snowprelicator.scafolding
 {
     public class Scafolding
     {
-        public static void CreateScaffolder(string dbConnectionString, List<string> dbSchemas)
+        public static ScaffoldedModel CreateScaffolder(string dbConnectionString, List<string> dbSchemas)
         {
+            Console.WriteLine("\n--- screating scaffolding:\n");
             GeneratorOptions generatorOptions = GeneratorOptions.GetDefaultOptions(dbConnectionString, dbSchemas);
 
             ScaffolderService scaffolderService = new ScaffolderService();
@@ -24,6 +25,8 @@ namespace ru.snowprelicator.scafolding
             {
                 Console.WriteLine(model.Code);
             }
+            Console.WriteLine("\n---\n");
+            return scaffoldedModel;
         }
     }
 }

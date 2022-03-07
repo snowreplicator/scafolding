@@ -6,10 +6,10 @@ namespace ru.snowprelicator.scafolding
     public class Program
     {
         // connect to database
-        public static readonly string DB_CONNECTION_STRING = "Server=127.0.0.1;Port=5432;Database=visual_studio;Username=portal;Password=troP4444";
+        private static readonly string DB_CONNECTION_STRING = "Server=127.0.0.1;Port=5432;Database=visual_studio;Username=portal;Password=troP4444";
 
         // list of database schemas for scaffolding
-        public static List<string> DB_SCHEMAS = new List<string>
+        private static List<string> DB_SCHEMAS = new List<string>
         {
             "public"
         };
