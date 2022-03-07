@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Scaffolding;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Scaffolding;
 using ru.snowprelicator.code_generation;
+using ru.snowprelicator.loading;
 using ru.snowprelicator.populate_database;
 using ru.snowprelicator.scafolding;
 using System;
@@ -25,11 +28,22 @@ namespace ru.snowprelicator.main
         static void Main(string[] args)
         {
             Console.WriteLine("run exe in ru.snowprelicator.main namespace");
+
+            // наполнение db данными
             PopulateDataBase.PopulateDatabase(DB_CONNECTION_STRING);
 
+
+            // создание виртуального контеста бд
             ScaffoldedModel scaffoldedModel = Scafolding.CreateScaffolder(DB_CONNECTION_STRING, DB_SCHEMAS);
 
-            using MemoryStream memoryStream = CodeGeneration.GenerateCode(scaffoldedModel, ENABLE_LAZY_LOADING);
+            MemoryStream memoryStream = CodeGeneration.GenerateCode(scaffoldedModel, ENABLE_LAZY_LOADING);
+
+            DbContext applicationContext = Loading.LoadCompiledDll(memoryStream, ENABLE_LAZY_LOADING);
+            memoryStream.Close();
+
+            // действия с данными
+            Utils.PrintAllApplicationContextTables(applicationContext.Model.GetEntityTypes());
         }
+
     }
 }
