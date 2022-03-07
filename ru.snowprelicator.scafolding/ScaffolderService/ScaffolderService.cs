@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal;
 
 namespace ru.snowprelicator.scafolding
 {
-    internal class ScaffolderService : IScaffolderService
+    public class ScaffolderService : IScaffolderService
     {
         public IReverseEngineerScaffolder CreateScaffolder()
         {

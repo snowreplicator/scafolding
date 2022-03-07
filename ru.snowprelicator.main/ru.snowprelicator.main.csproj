@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PopulateDataBase\PopulateDataBase.csproj" />
-    <ProjectReference Include="..\ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\PopulateDataBase\PopulateDataBase.csproj" />
+        <ProjectReference Include="..\ru.snowprelicator.scafolding\ru.snowprelicator.scafolding.csproj" />
+    </ItemGroup>
 
 </Project>

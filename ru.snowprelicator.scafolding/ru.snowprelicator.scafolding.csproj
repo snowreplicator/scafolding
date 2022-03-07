@@ -2,67 +2,18 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <!--
+        <OutputType>Exe</OutputType>
+        -->
     </PropertyGroup>
 
     <ItemGroup>
-
-        <!-- попытка вставлять последнии версии -->
-        <!--
-        <PackageReference Include="Bricelam.EntityFrameworkCore.Pluralizer" Version="1.0.0" />
-        <PackageReference Include="EntityFramework6.Npgsql" Version="6.4.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
-        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore" Version="6.0.2" />
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
-        <PackageReference Include="PluralizationServices" Version="1.0.0" />
-        -->
-        
-        <!-- попытка вставлять версии необходимые только для компиляции проекта -->
-        <!--
-        <PackageReference Include="Bricelam.EntityFrameworkCore.Pluralizer" Version="1.0.0" />
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
-        -->
-        
-
-        
-        <!-- попытка вставлять версии от программы где прокатило -->
-        <!--
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.11" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
-        <PackageReference Include="Bricelam.EntityFrameworkCore.Pluralizer" Version="1.0.0" />
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        -->
 
         <!-- вычисленный миниум на скафолдинг -->
         <PackageReference Include="Bricelam.EntityFrameworkCore.Pluralizer" Version="1.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-
-
-
-
-        <!-- попытка от консольного ревир инжинирига 
-        dotnet new console
-        dotnet add package Microsoft.EntityFrameworkCore.Design
-        dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
-        dotnet add package Microsoft.NETCore.App
-        dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
-        dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.Design
-        dotnet tool install - -global dotnet-ef
-        dotnet ef dbcontext scaffold "Server=127.0.0.1;Port=5432;Database=visual_studio;User Id=portal;Password=troP4444;" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
-        -->
-        <!--
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
-        -->
-
 
     </ItemGroup>
 
