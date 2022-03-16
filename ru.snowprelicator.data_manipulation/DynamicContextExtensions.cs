@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -134,6 +135,14 @@ namespace ru.snowprelicator.data_manipulation
             Console.WriteLine("\n все конструкторы:");
             ConstructorInfo[] ci = entityType.GetConstructors();
             foreach (ConstructorInfo item in ci) Console.WriteLine(item.Name);
+
+            // Получаем информацию обо всех конструкторах:
+            Console.WriteLine("\n runtime:");
+            IEnumerable<MethodInfo> rm = entityType.GetRuntimeMethods();
+            foreach (MethodInfo item in rm) Console.WriteLine(item.Name);
+
+
+
         }
     }
 }

@@ -4,18 +4,139 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace ru.snowprelicator.data_manipulation
 {
     public class DataManipulation
     {
         private static readonly string HORSE_TABLE = "Horse";
+        private static readonly string LESSON_SOURCE = "LessonSource";
 
         public static void ManipulateWithData(DbContext applicationContext)
         {
             Console.WriteLine("\n\n");
             Console.WriteLine("different operations on data\n");
 
+
+            Type classifierSetType = applicationContext.Model.FindEntityType("ru.snowreplicator.scafolder.modelnamespace.Classifierset").ClrType;
+
+
+            var dbSet = applicationContext.GetDbSet(classifierSetType);
+            //DbSet<object> dbSet = (DbSet<object>) applicationContext.GetDbSet(classifierSetType);
+            //MethodInfo methodRemove = dbSet.GetType().GetMethod("Select");
+
+            //DynamicContextExtensions.PrintAllMethods(dbSet);
+
+            //Enumerable.Select(dbSet, x => x.Name == "");
+
+            var sss = typeof(Enumerable).GetMethods();
+            MethodInfo methodInfo20 = null;
+            foreach (var item in sss)
+            {
+                Console.WriteLine("  name " + item.Name);
+                if (item.Name.IndexOf("Select") != -1)
+                {
+
+                    methodInfo20 = item;
+                    break;
+
+                    ParameterInfo[] parameters = item.GetParameters();
+                    // Выводим некоторые характеристики каждого из параметров. 
+                    foreach (ParameterInfo parameter in parameters)
+                    {
+
+                        //Console.WriteLine("Имя параметра: {0}", parameter.Name);
+                        //Console.WriteLine("Позиция в методе: {0}", parameter.Position);
+                        //Console.WriteLine("Тип параметра: {0}", parameter.ParameterType);
+                    }
+                }
+
+            }
+
+            // { System.Collections.Generic.IEnumerable`1[TResult] Select[TSource, TResult]
+            // (System.Collections.Generic.IEnumerable`1[TSource], System.Func`2[TSource, TResult])}
+            //MethodInfo methodRemove = typeof(Enumerable).GetMethod("Select", new Type[] { typeof(IEnumerable<>), typeof(Func<,>) });
+            //MethodInfo methodRemove = typeof(Enumerable).GetMethod("Select", new Type[] { typeof( IEnumerable<>), typeof(Func<,>) });
+            
+            MethodInfo methodSelect = typeof(Enumerable).GetMethod("Select", new Type[] { typeof(IEnumerable<>), typeof(Func<,>) });
+
+            MethodInfo methodAverage = typeof(Enumerable).GetMethod("Average", new Type[] { typeof(IEnumerable<int>) });
+            var res1 = methodAverage.Invoke(null, new object[] { new int[] { 11, 22, 33 } });
+
+            //this IEnumerable<TSource> source, Func< TSource, TResult > selector
+            //var res2 = methodInfo20.Invoke(null, new object[] { dbSet, "x => x" });
+
+            //Func<bool, object> square = x => x.GetPropertyValue("Name") == "";
+            //var res2 = methodInfo20.Invoke(null, new object[] { dbSet, square });
+
+            /*
+            var sssss = from c in (DbSet<object>) dbSet
+                        where c.GetPropertyValue("Name") == ""
+                        select c;
+            */
+
+            /*
+            var query = from e in db.Employments
+                        join rf in db.RoleFuncs on e.rolefuncid equals rf.RoleFuncId
+                        where rf.RoleFuncName.ToUpper().Contains(data.name.ToUpper())
+                        select e;
+            result.employments = query.ToList();
+            */
+
+            /*
+            Type t = Type.GetType("ru.snowreplicator.scafolder.modelnamespace.Classifierset");
+            var type = Assembly.GetExecutingAssembly()
+                    .GetTypes()
+                    .FirstOrDefault(t => t.Name == tableName);*/
+
+            /*
+            IEntityType horseIEntityType = GetEntityTypeByTableName(applicationContext, HORSE_TABLE);
+            Type horseEntityType = applicationContext.Model.FindEntityType(horseIEntityType.Name).ClrType;
+
+            DbSet<object> dbset2 = applicationContext.Set(horseIEntityType);*/
+
+            //DbSet<Horse> sss;
+
+            //applicationContext.Model.GetEntityTypes.Select(e => e.Name);
+
+
+            IEntityType horseIEntityType = GetEntityTypeByTableName(applicationContext, LESSON_SOURCE);
+            Type TypeOfHorseEntity = applicationContext.Model.FindEntityType(horseIEntityType.Name).ClrType;
+
+            /*
+            FieldInfo[] fields = TypeOfHorseEntity.GetFields();
+            foreach (var field in fields)
+            {
+                string name = field.Name;
+                object temp = field.GetValue(null);
+                // See if it is an integer or string.
+                if (temp is int)
+                {
+                    int value = (int)temp;
+                    Console.Write(name);
+                    Console.Write(" (int) = ");
+                    Console.WriteLine(value);
+                }
+                else if (temp is string)
+                {
+                    string value = temp as string;
+                    Console.Write(name);
+                    Console.Write(" (string) = ");
+                    Console.WriteLine(value);
+                }
+            }*/
+
+
+
+            Console.WriteLine("\n\n");
+
+
+
+
+
+
+            /*
             // список всех таблиц в бд
             PrintAllApplicationContextTables(applicationContext.Model.GetEntityTypes());
 
@@ -48,6 +169,7 @@ namespace ru.snowprelicator.data_manipulation
 
             Console.WriteLine("\n\nall params of horse item: ");
             DynamicContextExtensions.PrintAllMethods(horseIEntityType);
+            */
         }
 
         // список таблиц в бд
@@ -106,7 +228,7 @@ namespace ru.snowprelicator.data_manipulation
         // получение первой записи из таблицы
         private static object FindFirstTableEntity(DbContext applicationContext, IEntityType iEntityType)
         {
-            IQueryable<object> items = (IQueryable<object>) applicationContext.QueryAsFunc(iEntityType.Name);
+            IQueryable<object> items = (IQueryable<object>)applicationContext.QueryAsFunc(iEntityType.Name);
             if (items.Count() > 0)
             {
                 return items.First();

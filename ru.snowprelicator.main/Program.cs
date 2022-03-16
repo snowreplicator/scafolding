@@ -19,7 +19,10 @@ namespace ru.snowprelicator.main
         // list of database schemas for scaffolding
         private static List<string> DB_SCHEMAS = new List<string>
         {
-            "public"
+            //"public",
+            "classifiers",
+            "multi_d_cases"
+
         };
 
         // LazyLoading
